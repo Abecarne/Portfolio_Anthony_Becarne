@@ -11,12 +11,12 @@ import {
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "@/components/ui/tooltip";
+} from "../../components/ui/tooltip";
 
 import Link from "next/link";
 import Image from "next/image";
 
-import WorkSliderButton from "@/components/WorkSliderButtons";
+import WorkSliderButton from "../../components/WorkSliderButtons";
 import { Gamepad2 } from "lucide-react";
 
 const projects = [

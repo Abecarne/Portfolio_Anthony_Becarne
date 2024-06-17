@@ -23,15 +23,15 @@ import { SiTypescript, SiTailwindcss } from "react-icons/si";
 import { HiAcademicCap, HiBriefcase } from "react-icons/hi";
 import { RiNextjsLine } from "react-icons/ri";
 import { TbBrandTypescript } from "react-icons/tb";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../../components/ui/tabs";
 
 import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
   TooltipProvider,
-} from "@/components/ui/tooltip";
-import { ScrollArea } from "@/components/ui/scroll-area";
+} from "../../components/ui/tooltip";
+import { ScrollArea } from "../../components/ui/scroll-area";
 import { motion } from "framer-motion";
 
 const about = {
