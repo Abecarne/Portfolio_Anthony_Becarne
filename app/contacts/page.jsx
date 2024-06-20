@@ -29,8 +29,8 @@ const infos = [
   },
   {
     icon: <FaMapMarkerAlt />,
-    title: "Address",
-    description: "1234 Street Name, City Name, Country Name",
+    title: "Location",
+    description: "Lille, France",
   },
 ];
 
@@ -48,19 +48,16 @@ const Contacts = () => {
     >
       <div className="container mx-auto">
         <div className="flex flex-col xl:flex-row gap-[30px]">
-          {/* Form */}
           <div className="xl:h-[54%] order-2 xl:order-none">
             <form
               className="flex flex-col gap-6 p-10 bg-[#27272c] rounded-xl"
               action="https://formspree.io/f/mwkggyda"
               method="POST"
+              encType="multipart/form-data"
             >
               <h3 className="text-4xl text-accent">Let's work together</h3>
               <p className="text-white/60">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
-                blanditiis velit labore officia ex quam eum cumque, repudiandae
-                ullam eaque accusantium obcaecati perferendis sequi? Magni
-                assumenda aspernatur quasi veniam cum?
+                Thank you for reaching out! Please provide some details about your project idea so I can better understand your needs and how I can help.
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <Input name="firstname" type="text" placeholder="Firstname" />
@@ -76,9 +73,13 @@ const Contacts = () => {
                 <SelectContent>
                   <SelectGroup>
                     <SelectLabel>Select a service</SelectLabel>
-                    <SelectItem value="Web Development">Web Development</SelectItem>
+                    <SelectItem value="Web Development">
+                      Web Development
+                    </SelectItem>
                     <SelectItem value="UI/UX Design">UI/UX Design</SelectItem>
-                    <SelectItem value="Software Development">Software Development</SelectItem>
+                    <SelectItem value="Software Development">
+                      Software Development
+                    </SelectItem>
                   </SelectGroup>
                 </SelectContent>
               </Select>

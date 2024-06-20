@@ -70,41 +70,28 @@ const experience = {
   icon: HiAcademicCap,
   title: "My experiences",
   description:
-    "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "During my career, I have had the opportunity to work on various projects and with different companies. Here are some of my experiences:",
   items: [
     {
-      company: "Exotec",
+      company: "EXOTEC",
       position: "R&D Software Engineer",
-      duration: "2020 - 2021",
+      duration: "2023 | 4 months internship",
       description:
-        "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "Procedural generation of 3D models for the training of neural networks. Development with Python and Blender API.",
     },
     {
-      company: "Freelance",
+      company: "AQUILAB",
       position: "Software Developer",
-      duration: "2019 - 2020",
-    },
-    {
-      company: "Freelance",
-      position: "Web Developer",
-      duration: "2018 - 2019",
-    },
-    {
-      company: "Exotec",
-      position: "R&D Software Engineer",
-      duration: "2020 - 2021",
+      duration: "2021 | 6 months internship",
       description:
-        "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "Update of the company's medecine management software. Development with C++, Qt and Boost libraries.",
     },
     {
-      company: "Freelance",
-      position: "Software Developer",
-      duration: "2019 - 2020",
-    },
-    {
-      company: "Freelance",
-      position: "Web Developer",
-      duration: "2018 - 2019",
+      company: "Open Classrooms",
+      position: "Frontend Developer",
+      duration: "2019 | 2 weeks internship",
+      description:
+        "Development of dynamic and responsive web pages. Development with HTML, CSS and JavaScript.",
     },
   ],
 };
@@ -113,39 +100,31 @@ const education = {
   icon: HiBriefcase,
   title: "My education",
   description:
-    "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "I have always been passionate about computer science and software development. Here are some of the degrees I have obtained:",
   items: [
     {
       institution: "Epitech",
       degree: "Master in Computer Science",
       country: "France",
-      duration: "2020 - 2025",
-      description:
-        "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      duration: "2020 - Present",
     },
     {
       institution: "Keimyung University",
       degree: "Bachelor in Game Software Engineering",
       country: "South Korea",
       duration: "2023 - 2024",
-      description:
-        "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    },
+    {
+      institution: "Frontend Mentor",
+      degree: "Frontend Developer",
+      country: "Online",
+      duration: "2023 - 2024",
     },
     {
       institution: "Lille University",
       degree: "Bachelor 1 in Engineering Sciences",
       country: "France",
       duration: "2019 - 2020",
-      description:
-        "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    },
-    {
-      institution: "Frontend Mentor",
-      degree: "Frontend Developer",
-      country: "Online",
-      duration: "2021 - 2022",
-      description:
-        "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     },
   ],
 };
@@ -153,7 +132,7 @@ const education = {
 const skills = {
   title: "My skills",
   description:
-    "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "I have acquired a wide range of skills during my career. Here are some of the technologies I am proficient in:",
   skillList: [
     {
       name: "HTML",
@@ -168,28 +147,16 @@ const skills = {
       icon: <DiJsBadge />,
     },
     {
+      name: "TypeScript",
+      icon: <SiTypescript />,
+    },
+    {
       name: "React",
       icon: <DiReact />,
     },
     {
       name: "Next.js",
       icon: <RiNextjsLine />,
-    },
-    {
-      name: "TypeScript",
-      icon: <SiTypescript />,
-    },
-    {
-      name: "TailwindCSS",
-      icon: <SiTailwindcss />,
-    },
-    {
-      name: "Sass",
-      icon: <DiSass />,
-    },
-    {
-      name: "jQuery",
-      icon: <DiJqueryLogo />,
     },
     {
       name: "Node.js",
@@ -200,8 +167,20 @@ const skills = {
       icon: <DiPython />,
     },
     {
+      name: "jQuery",
+      icon: <DiJqueryLogo />,
+    },
+    {
       name: "Unity",
       icon: <DiUnitySmall />,
+    },
+    {
+      name: "TailwindCSS",
+      icon: <SiTailwindcss />,
+    },
+    {
+      name: "Sass",
+      icon: <DiSass />,
     },
     {
       name: "MongoDB",
@@ -219,18 +198,6 @@ const skills = {
       name: "NPM",
       icon: <DiNpm />,
     },
-    {
-      name: "Terminal",
-      icon: <DiTerminal />,
-    },
-    {
-      name: "Database",
-      icon: <DiDatabase />,
-    },
-    {
-      name: "Visual Studio",
-      icon: <DiVisualstudio />,
-    },
   ],
 };
 
@@ -242,7 +209,7 @@ const Resume = () => {
         opacity: 1,
         transition: { delay: 0.4, duration: 0.4, ease: "easeIn" },
       }}
-      className="min-h-[80vh] flex items-center justify-center py-12 xl:py-0"
+      className="min-h-[80vh] flex justify-center py-12 xl:py-0"
     >
       <div className="container mx-auto">
         <Tabs
@@ -354,27 +321,28 @@ const Resume = () => {
                 <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
                   {skills.description}
                 </p>
-
-                <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 xl:gap-[30px]">
-                  {skills.skillList.map((skill, index) => {
-                    return (
-                      <li key={index}>
-                        <TooltipProvider delayDuration={100}>
-                          <Tooltip>
-                            <TooltipTrigger className="w-full h-[150px] bg-[#232329] rounded-xl flex justify-center items-center group">
-                              <div className="text-6xl group-hover:text-accent transition-all duration-300">
-                                {skill.icon}
-                              </div>
-                            </TooltipTrigger>
-                            <TooltipContent>
-                              <p className="capitalize">{skill.name}</p>
-                            </TooltipContent>
-                          </Tooltip>
-                        </TooltipProvider>
-                      </li>
-                    );
-                  })}
-                </ul>
+                <ScrollArea className="h-[450px]">
+                  <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 xl:gap-[30px]">
+                    {skills.skillList.map((skill, index) => {
+                      return (
+                        <li key={index}>
+                          <TooltipProvider delayDuration={100}>
+                            <Tooltip>
+                              <TooltipTrigger className="w-full h-[150px] bg-[#232329] rounded-xl flex justify-center items-center group">
+                                <div className="text-6xl group-hover:text-accent transition-all duration-300">
+                                  {skill.icon}
+                                </div>
+                              </TooltipTrigger>
+                              <TooltipContent>
+                                <p className="capitalize">{skill.name}</p>
+                              </TooltipContent>
+                            </Tooltip>
+                          </TooltipProvider>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </ScrollArea>
               </div>
             </TabsContent>
           </div>

@@ -22,22 +22,22 @@ import { Gamepad2 } from "lucide-react";
 const projects = [
   {
     num: "01",
-    category: "Web Development",
-    title: "Project 1",
+    category: "FullStack Development",
+    title: "AREA",
     description:
-      "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    stack: [{ name: "HTML 5" }, { name: "CSS 3" }, { name: "JavaScript" }],
-    image: "/assets/works/project01.png",
+      "A fullstack web and mobile application that uses different APIs such as Youtube, Gmail, Twitch, Twitter and GitHub. Users can create an account, connect their services, and create applets.",
+    stack: [{ name: "React.js" }, { name: "Node.js" }, { name: "Javascript" }, { name: "MySQL"}, { name: "Express"}, { name: "Scss"}],
+    image: "/assets/works/area_preview.png",
     live: "https://github.com",
     url: "https://github.com",
   },
   {
     num: "02",
-    category: "Web Development",
-    title: "Project 2",
+    category: "FullStack Development",
+    title: "Vocabulary",
     description:
-      "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    stack: [{ name: "Next js" }, { name: "TailwindCSS" }, { name: "" }],
+      "A fullstack web application that helps users to learn new words and their meanings. Users can create an account, add new words, and test their knowledge with quizzes.",
+    stack: [{ name: "Next.js" }, { name: "React.js" }, { name: "TypeScript" }, { name: "TailwindCSS" }, { name: "MongoDB" }, { name: "Express" }, { name: "NodeJS" }],
     image: "/assets/works/project01.png",
     live: "https://github.com",
     url: "https://github.com",
@@ -108,7 +108,7 @@ const Works = () => {
               {/*  Description */}
               <p className="text-white/60">{project.description}</p>
               {/* Stack */}
-              <ul className="flex gap-4 ">
+              <ul className="flex gap-4 flex-wrap">
                 {project.stack.map((item, index) => (
                   <li key={index} className="text-xl text-accent">
                     {item.name}
