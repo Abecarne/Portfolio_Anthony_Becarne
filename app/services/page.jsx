@@ -7,14 +7,14 @@ import { motion } from "framer-motion";
 const services = [
   {
     num: "01",
-    title: "Web Development",
-    description: "lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    title: "Freelance Web Development",
+    description: "I will create a professional website for your business or personal use. I will also provide you with a custom design and a responsive layout.",
     link: "/webdev",
   },
   {
     num: "02",
     title: "Software Development",
-    description: "lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    description: "",
     link: "/softdev",
   },
   {

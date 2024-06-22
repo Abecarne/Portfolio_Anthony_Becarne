@@ -44,35 +44,35 @@ const projects = [
   },
   {
     num: "03",
-    category: "Software Development",
-    title: "Project 3",
+    category: "Game Development",
+    title: "R-Type",
     description:
-      "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    stack: [{ name: "" }, { name: "CSS 3" }, { name: "JavaScript" }],
-    image: "/assets/works/project01.png",
+      "R-Type online multiplayer clone made in C++ with the SFML library. The game features 3 levels, 3 different enemies, and a boss. The player can shoot, move, and use a special attack.",
+    stack: [{ name: "C++" }, { name: "Boost" }, { name: "SFML" }, { name: "CMake" }, { name: "Git"}],
+    image: "/assets/works/rtype_preview.png",
     live: "https://github.com",
     url: "https://github.com",
   },
   {
     num: "04",
-    category: "Web Development",
-    title: "Project 4",
+    category: "Frontend Development",
+    title: "FrontendMentor's Challenges",
     description:
-      "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    stack: [{ name: "HTML 5" }, { name: "CSS 3" }, { name: "JavaScript" }],
+    "A collection of challenges from FrontendMentor.io. I use these challenges to improve my skills and learn new technologies. Feel free to check them out with the link below.",
+    stack: [{ name: "HTML 5" }, { name: "CSS 3" }, { name: "JavaScript" }, { name: "React.js" }, { name: "TailwindCSS" }, { name: "Scss" }],
     image: "/assets/works/project01.png",
     live: "https://github.com",
-    url: "https://github.com",
+    url: "https://www.frontendmentor.io/profile/Abecarne",
   },
   {
     num: "05",
-    category: "Web Development",
-    title: "Project 5",
+    category: "Game Development",
+    title: "Rainbow Rumble",
     description:
-      "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    stack: [{ name: "HTML 5" }, { name: "CSS 3" }, { name: "JavaScript" }],
-    image: "/assets/works/project01.png",
-    live: "https://github.com",
+      "A 3D FPS game made in Unity. The game features 3 different weapons, 3 different enemies, and a boss. The player fights against waves of enemies to gain points and upgrade its weapons.",
+    stack: [{ name: "Unity" }, { name: "C#" }, { name: "Blender" }, { name: "Git" }],
+    image: "/assets/works/rainbow_rumble_preview.png",
+    live: "https://www.youtube.com/watch?v=780mI3jOHPc&ab_channel=Soryoz",
     url: "https://github.com",
   },
 ];
@@ -101,8 +101,12 @@ const Works = () => {
               <div className="text-8xl leading-none font-extrabold text-transparent text-outline">
                 {project.num}
               </div>
+              {/* Title */}
+              <h1 className="text-5xl font-bold leading-none text-white">
+                {project.title}
+              </h1>
               {/* Category */}
-              <h2 className="text-[42px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500 capitalize">
+              <h2 className="text-3xl font-bold leading-none text-white/60 group-hover:text-accent transition-all duration-500 capitalize">
                 {project.category}
               </h2>
               {/*  Description */}
