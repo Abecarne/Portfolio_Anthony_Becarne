@@ -29,7 +29,7 @@ const Home = () => {
                 size="lg"
                 className="uppercase flex items-center gap-2"
                 onClick={() =>
-                  window.open("/assets/resume/CV_Anthony-Becarne.pdf")
+                  window.open("/assets/resume/Anthony Becarne Resume.pdf")
                 }
               >
                 <span>View CV</span>
