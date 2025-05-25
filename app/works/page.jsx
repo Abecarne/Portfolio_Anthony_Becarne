@@ -1,9 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
-import React, { useState } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
+import { useState } from "react";
 import "swiper/css";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 import { BsArrowUpRight, BsGithub } from "react-icons/bs";
 import {
@@ -13,15 +13,49 @@ import {
   TooltipTrigger,
 } from "../../components/ui/tooltip";
 
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
 
 import WorkSliderButton from "../../components/WorkSliderButtons";
-import { Gamepad2 } from "lucide-react";
 
 const projects = [
   {
     num: "01",
+    category: "Game Development",
+    title: "R-Type",
+    description:
+      "R-Type multiplayer clone made in C++ with a custom game engine and SFML for Graphics. The game features different levels, enemies & their own AI behavior, and a boss. Up to 4 players can play together in a local network. The game is inspired by the classic R-Type game.",
+    stack: [{ name: "C++" }, { name: "Boost" }, { name: "SFML" }, { name: "CMake" }, { name: "Git" }],
+    image: "/assets/works/rtype_preview.png",
+    video: "https://www.youtube.com/embed/bC9gDVmy5RU",
+    live: "https://github.com",
+    url: "https://github.com",
+  },
+  {
+    num: "02",
+    category: "Game Development",
+    title: "Sense | Chapter 1",
+    description:
+    "Sense is a 3D innovative RPG game made in Unreal Engine 5. Sense bases its gameplay on the player's human senses. The first chapter of the game is a prototype that showcases the game's mechanics for the vision. In a team of 7, I was the Artitic Director, Level Designer, 3D Artist and Game Designer.",
+    stack: [{ name: "Unreal Engine 5" }, { name: "Blender 3D" }, { name: "Houdini" }, { name: "Perforce" }],
+    video: "https://www.youtube.com/embed/O5ToL-oFs4Y",
+    live: "",
+    url: "https://www.frontendmentor.io/profile/Abecarne",
+  },
+  {
+    num: "03",
+    category: "Game Development",
+    title: "Rainbow Rumble",
+    description:
+      "A 3D FPS game made in Unity. The game features 3 different weapons, 3 different enemies, and a boss. The player fights against waves of enemies to gain points and upgrade its weapons.",
+    stack: [{ name: "Unity" }, { name: "C#" }, { name: "Blender" }, { name: "Git" }],
+    image: "/assets/works/rainbow_rumble_preview.png",
+    video: "https://www.youtube.com/embed/780mI3jOHPc",
+    live: "https://www.youtube.com/watch?v=780mI3jOHPc&ab_channel=Soryoz",
+    url: "https://github.com",
+  },
+  {
+    num: "04",
     category: "FullStack Development",
     title: "AREA",
     description:
@@ -32,7 +66,7 @@ const projects = [
     url: "https://github.com",
   },
   {
-    num: "02",
+    num: "05",
     category: "FullStack Development",
     title: "Vocabulary",
     description:
@@ -40,39 +74,6 @@ const projects = [
     stack: [{ name: "Next.js" }, { name: "React.js" }, { name: "TypeScript" }, { name: "TailwindCSS" }, { name: "MongoDB" }, { name: "Express" }, { name: "NodeJS" }],
     image: "/assets/works/project01.png",
     live: "https://github.com",
-    url: "https://github.com",
-  },
-  {
-    num: "03",
-    category: "Game Development",
-    title: "R-Type",
-    description:
-      "R-Type online multiplayer clone made in C++ with the SFML library. The game features 3 levels, 3 different enemies, and a boss. The player can shoot, move, and use a special attack.",
-    stack: [{ name: "C++" }, { name: "Boost" }, { name: "SFML" }, { name: "CMake" }, { name: "Git"}],
-    image: "/assets/works/rtype_preview.png",
-    live: "https://github.com",
-    url: "https://github.com",
-  },
-  {
-    num: "04",
-    category: "Frontend Development",
-    title: "FrontendMentor's Challenges",
-    description:
-    "A collection of challenges from FrontendMentor.io. I use these challenges to improve my skills and learn new technologies. Feel free to check them out with the link below.",
-    stack: [{ name: "HTML 5" }, { name: "CSS 3" }, { name: "JavaScript" }, { name: "React.js" }, { name: "TailwindCSS" }, { name: "Scss" }],
-    image: "/assets/works/project01.png",
-    live: "https://github.com",
-    url: "https://www.frontendmentor.io/profile/Abecarne",
-  },
-  {
-    num: "05",
-    category: "Game Development",
-    title: "Rainbow Rumble",
-    description:
-      "A 3D FPS game made in Unity. The game features 3 different weapons, 3 different enemies, and a boss. The player fights against waves of enemies to gain points and upgrade its weapons.",
-    stack: [{ name: "Unity" }, { name: "C#" }, { name: "Blender" }, { name: "Git" }],
-    image: "/assets/works/rainbow_rumble_preview.png",
-    live: "https://www.youtube.com/watch?v=780mI3jOHPc&ab_channel=Soryoz",
     url: "https://github.com",
   },
 ];
@@ -166,16 +167,26 @@ const Works = () => {
                   <SwiperSlide key={index} className="w-full">
                     <div className="h-[460px] relative group flex justify-center items-center bg-pink-50/20">
                       {/* Overlay */}
-                      <div className="absolute top-0 bottom-0 w-full h-full bg-black/10 z-10"></div>
+                      <div className="absolute top-0 bottom-0 w-full h-full bg-black/10 z-10 pointer-events-none"></div>
 
                       {/* Image */}
-                      <div className="relative w-full h-full">
-                        <Image
-                          src={project.image}
-                          fill
-                          className="object-cover"
-                          alt=""
-                        />
+                      <div className="relative w-full h-full flex items-center justify-center">
+                        {project.video ? (
+                          <iframe
+                            src={project.video}
+                            title={project.title}
+                            className="w-full h-full aspect-video rounded-lg"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen
+                          />
+                        ) : (
+                          <Image
+                            src={project.image}
+                            fill
+                            className="object-cover"
+                            alt={project.title}
+                          />
+                        )}
                       </div>
                     </div>
                   </SwiperSlide>

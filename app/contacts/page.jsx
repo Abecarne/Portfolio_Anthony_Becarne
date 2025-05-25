@@ -20,7 +20,7 @@ const infos = [
   {
     icon: <FaPhoneAlt />,
     title: "Phone",
-    description: "(+40) 123 456 789",
+    description: "(+33) 6 25 85 28 34",
   },
   {
     icon: <FaEnvelope />,
@@ -79,6 +79,12 @@ const Contacts = () => {
                     <SelectItem value="UI/UX Design">UI/UX Design</SelectItem>
                     <SelectItem value="Software Development">
                       Software Development
+                    </SelectItem>
+                    <SelectItem value="Video Game Development">
+                      Video Game Development
+                    </SelectItem>
+                    <SelectItem value="Other">
+                      Other
                     </SelectItem>
                   </SelectGroup>
                 </SelectContent>

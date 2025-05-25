@@ -2,42 +2,39 @@
 
 import {
   DiCss3,
+  DiGit,
   DiHtml5,
+  DiJqueryLogo,
   DiJsBadge,
+  DiLinux,
+  DiMongodb,
+  DiNodejs,
+  DiNpm,
   DiPython,
   DiReact,
-  DiNodejs,
-  DiUnitySmall,
-  DiMongodb,
-  DiLinux,
-  DiGit,
-  DiNpm,
-  DiTerminal,
-  DiDatabase,
   DiSass,
-  DiJqueryLogo,
-  DiVisualstudio,
+  DiUnitySmall
 } from "react-icons/di";
-
-import { SiTypescript, SiTailwindcss } from "react-icons/si";
-import { HiAcademicCap, HiBriefcase } from "react-icons/hi";
 import { RiNextjsLine } from "react-icons/ri";
-import { TbBrandTypescript } from "react-icons/tb";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "../../components/ui/tabs";
+import { TbBrandCpp, TbBrandCSharp, TbSql } from "react-icons/tb";
+import { HiAcademicCap, HiBriefcase } from "react-icons/hi";
+import { SiTailwindcss, SiTypescript, SiUnrealengine, SiBlender, SiAutodeskmaya } from "react-icons/si";
 
+
+import { motion } from "framer-motion";
+import { ScrollArea } from "../../components/ui/scroll-area";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../../components/ui/tabs";
 import {
   Tooltip,
   TooltipContent,
-  TooltipTrigger,
   TooltipProvider,
+  TooltipTrigger,
 } from "../../components/ui/tooltip";
-import { ScrollArea } from "../../components/ui/scroll-area";
-import { motion } from "framer-motion";
 
 const about = {
   title: "About Me",
   description:
-    "I am a software developer with a passion for building web applications. I excel at crafting elegant digital solutions that help businesses grow.",
+    "I am a passionate software developer with a strong interest in video game development and web technologies. I have experience in various programming languages and frameworks, and I am always eager to learn new skills and improve my knowledge.",
   infos: [
     {
       fieldName: "Name",
@@ -73,18 +70,32 @@ const experience = {
     "During my career, I have had the opportunity to work on various projects and with different companies. Here are some of my experiences:",
   items: [
     {
+      company: "Epitech",
+      position: "Educational Supervisor",
+      duration: "2025 | 7 months Fixed-Term",
+      description:
+        "Assisting students in their learning process, providing support and guidance in their technical projects. In charge of organizing workshops and events to enhance the learning experience. Specialized in teaching web development, software engineering, and video game development.",
+    },
+    {
+      company: "Verdia",
+      position: "E-commerce Developer",
+      duration: "2025 | 1 month internship",
+      description:
+        "Updated and maintained the company's e-commerce website. Developed new features and optimized the user experience. Worked with an existing Odoo project for a national client.",
+    },
+    {
       company: "EXOTEC",
       position: "R&D Software Engineer",
       duration: "2023 | 4 months internship",
       description:
-        "Procedural generation of 3D models for the training of neural networks. Development with Python and Blender API.",
+        "Procedural generation of 3D models for the training of Machine Learning models for computer vision. Development with Python, Blender API for 3D assets and OpenCV for texture generation.",
     },
     {
       company: "AQUILAB",
       position: "Software Developer",
       duration: "2021 | 6 months internship",
       description:
-        "Update of the company's medecine management software. Development with C++, Qt and Boost libraries.",
+        "Update of the company's medicine management software. Development with C++, Qt and Boost libraries.",
     },
     {
       company: "Open Classrooms",
@@ -104,25 +115,29 @@ const education = {
   items: [
     {
       institution: "Epitech",
-      degree: "Master in Computer Science",
+      degree: "Master's in IT Engineering",
+      courses: "Software Engineering, Data Science, Video Game Development",
       country: "France",
-      duration: "2020 - Present",
+      duration: "2020 - 2025",
     },
     {
-      institution: "Keimyung University",
-      degree: "Bachelor in Game Software Engineering",
+      institution: "계명대학교 | Keimyung University",
+      degree: "Bachelor's in Game Software Engineering",
+      courses: "Game Development, Computer Graphics, 3D Modeling & Animation",
       country: "South Korea",
       duration: "2023 - 2024",
     },
     {
       institution: "Frontend Mentor",
       degree: "Frontend Developer",
+      courses: "Frontend Development, Responsive Design, UI/UX",
       country: "Online",
       duration: "2023 - 2024",
     },
     {
       institution: "Lille University",
       degree: "Bachelor 1 in Engineering Sciences",
+      courses: "Mathematics, Physics, Computer Science",
       country: "France",
       duration: "2019 - 2020",
     },
@@ -134,70 +149,28 @@ const skills = {
   description:
     "I have acquired a wide range of skills during my career. Here are some of the technologies I am proficient in:",
   skillList: [
-    {
-      name: "HTML",
-      icon: <DiHtml5 />,
-    },
-    {
-      name: "CSS",
-      icon: <DiCss3 />,
-    },
-    {
-      name: "JavaScript",
-      icon: <DiJsBadge />,
-    },
-    {
-      name: "TypeScript",
-      icon: <SiTypescript />,
-    },
-    {
-      name: "React",
-      icon: <DiReact />,
-    },
-    {
-      name: "Next.js",
-      icon: <RiNextjsLine />,
-    },
-    {
-      name: "Node.js",
-      icon: <DiNodejs />,
-    },
-    {
-      name: "Python",
-      icon: <DiPython />,
-    },
-    {
-      name: "jQuery",
-      icon: <DiJqueryLogo />,
-    },
-    {
-      name: "Unity",
-      icon: <DiUnitySmall />,
-    },
-    {
-      name: "TailwindCSS",
-      icon: <SiTailwindcss />,
-    },
-    {
-      name: "Sass",
-      icon: <DiSass />,
-    },
-    {
-      name: "MongoDB",
-      icon: <DiMongodb />,
-    },
-    {
-      name: "Linux",
-      icon: <DiLinux />,
-    },
-    {
-      name: "Git",
-      icon: <DiGit />,
-    },
-    {
-      name: "NPM",
-      icon: <DiNpm />,
-    },
+    { name: "C++", icon: <TbBrandCpp /> },
+    { name: "Python", icon: <DiPython /> },
+    { name: "SQL", icon: <TbSql /> },
+    { name: "Unreal Engine", icon: <SiUnrealengine /> },
+    { name: "Unity", icon: <DiUnitySmall /> },
+    { name: "Blender", icon: <SiBlender /> },
+    { name: "Autodesk Maya", icon: <SiAutodeskmaya /> },
+    { name: "C#", icon: <TbBrandCSharp /> },
+    { name: "HTML", icon: <DiHtml5 /> },
+    { name: "CSS", icon: <DiCss3 /> },
+    { name: "JavaScript", icon: <DiJsBadge /> },
+    { name: "TypeScript", icon: <SiTypescript /> },
+    { name: "React", icon: <DiReact /> },
+    { name: "Next.js", icon: <RiNextjsLine /> },
+    { name: "Node.js", icon: <DiNodejs /> },
+    { name: "jQuery", icon: <DiJqueryLogo /> },
+    { name: "TailwindCSS", icon: <SiTailwindcss /> },
+    { name: "Sass", icon: <DiSass /> },
+    { name: "MongoDB", icon: <DiMongodb /> },
+    { name: "Linux", icon: <DiLinux /> },
+    { name: "Git", icon: <DiGit /> },
+    { name: "NPM", icon: <DiNpm /> },
   ],
 };
 
@@ -258,12 +231,12 @@ const Resume = () => {
                   {experience.description}
                 </p>
                 <ScrollArea className="h-[400px]">
-                  <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[30px]">
+                  <ul className="columns-1 lg:columns-2 gap-[30px] space-y-[30px]">
                     {experience.items.map((item, index) => {
                       return (
                         <li
                           key={index}
-                          className="bg-[#232329] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1"
+                          className="bg-[#232329] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1 break-inside-avoid"
                         >
                           <span className="text-accent">{item.duration}</span>
                           <h3 className="text-xl max-w-[260px] min-h-[60px] text-center lg:text-left">
@@ -307,6 +280,7 @@ const Resume = () => {
                           <p className="min-h-[60px] flex items-center">
                             {item.degree}
                           </p>
+                          <p className="text-white/40 text-sm text-center lg:text-left">{item.courses}</p>
                         </li>
                       );
                     })}

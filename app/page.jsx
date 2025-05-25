@@ -13,16 +13,14 @@ const Home = () => {
       <div className="container mx-auto h-full">
         <div className="flex flex-col xl:flex-row items-center justify-between xl:pt-8 xl:pb-24">
           <div className="text-center xl:text-left order-2 xl:order-none">
-            <span>Software & Web Developer</span>
-            <h1 className="h1">
+            <span>Creative Developer</span>
+            <h2 className="h1">
               Hello, I'm
               <br />
               <span className="text-accent">Anthony Becarne</span>
-            </h1>
+            </h2>
             <p className="max-w-[500px] mb-9 text-white/80">
-              I excel at crafting elegant digital solutions that help businesses
-              grow. I am a software developer with a passion for building web
-              applications.
+              Passionate about creativity and technology, I specialize in crafting immersive digital experiences. With a focus on software engineering and video game development, I bring ideas to life through innovative solutions and engaging interfaces.
             </p>
 
             <div className="flex flex-col xl:flex-row items-center gap-8 ">

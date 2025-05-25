@@ -7,27 +7,27 @@ import { motion } from "framer-motion";
 const services = [
   {
     num: "01",
+    title: "Video Game Development",
+    description: "Specialized in video game development in South Korea, I will create engaging and immersive gaming experiences. This includes game design, development, and optimization.",
+    link: "/gaming",
+  },
+  {
+    num: "02",
+    title: "Software Development",
+    description: "According to your needs, I will develop software solutions that are tailored to your requirements. This includes desktop applications, mobile apps, web apps and more.",
+    link: "/softdev",
+  },
+  {
+    num: "03",
     title: "Freelance Web Development",
     description: "I will create a professional website for your business or personal use. I will also provide you with a custom design and a responsive layout.",
     link: "/webdev",
   },
   {
-    num: "02",
-    title: "Software Development",
-    description: "",
-    link: "/softdev",
-  },
-  {
-    num: "03",
-    title: "Mentorship & Training",
-    description: "lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    link: "/mentor",
-  },
-  {
     num: "04",
-    title: "Consulting & Strategy",
-    description: "lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    link: "/consulting",
+    title: "Mentorship & Training",
+    description: "I offer mentorship and training services to help you enhance your skills and knowledge in software development and related fields.",
+    link: "/mentor",
   },
 ];
 
