@@ -13,6 +13,7 @@ const Photo = () => {
           opacity: 1,
           transition: { delay: 0.5, duration: 0.4, ease: "easeIn" },
         }}
+        className="absolute"
       >
         <motion.div
           initial={{ opacity: 0 }}
@@ -20,7 +21,12 @@ const Photo = () => {
             opacity: 1,
             transition: { delay: 0.5, duration: 0.4, ease: "easeIn" },
           }}
-          className="w-[298px] h-[298px] xl:w-[498px] xl:h-[498px] mix-blend-lighten absolute"
+          className="w-[298px] h-[298px] xl:w-[498px] xl:h-[498px] rounded-full"
+          style={{
+            WebkitMaskImage:
+              "radial-gradient(circle, white 70%, transparent 100%)",
+            maskImage: "radial-gradient(circle, white 70%, transparent 100%)",
+          }}
         >
           <Image
             src="/assets/Anthony.png"
@@ -28,7 +34,7 @@ const Photo = () => {
             quality={100}
             fill
             alt="Anthony"
-            className="object-contain"
+            className="object-cover"
           />
         </motion.div>
       </motion.div>
