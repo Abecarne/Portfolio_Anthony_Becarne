@@ -48,8 +48,6 @@ const Home = () => {
           </div>
         </div>
       </div>
-
-      <Stats />
     </section>
   );
 };
