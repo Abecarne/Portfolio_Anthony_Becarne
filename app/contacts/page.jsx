@@ -26,6 +26,7 @@ const infos = [
     icon: <FaEnvelope />,
     title: "Email",
     description: "anthony.becarne@gmail.com",
+    link: "mailto:anthony.becarne@gmail.com"
   },
   {
     icon: <FaMapMarkerAlt />,
@@ -111,7 +112,16 @@ const Contacts = () => {
                     </div>
                     <div className="flex-1">
                       <p className="text-white/60">{item.title}</p>
-                      <h3 className="text-xl">{item.description}</h3>
+                      {item.link ? (
+                        <a
+                          href={item.link}
+                          className="text-xl text-accent hover:underline"
+                        >
+                          {item.description}
+                        </a>
+                      ) : (
+                        <h3 className="text-xl">{item.description}</h3>
+                      )}
                     </div>
                   </li>
                 );
