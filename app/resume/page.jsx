@@ -15,10 +15,10 @@ import {
   DiSass,
   DiUnitySmall
 } from "react-icons/di";
-import { RiNextjsLine } from "react-icons/ri";
-import { TbBrandCpp, TbBrandCSharp, TbSql } from "react-icons/tb";
 import { HiAcademicCap, HiBriefcase } from "react-icons/hi";
-import { SiTailwindcss, SiTypescript, SiUnrealengine, SiBlender, SiAutodeskmaya } from "react-icons/si";
+import { RiNextjsLine } from "react-icons/ri";
+import { SiAutodeskmaya, SiBlender, SiTailwindcss, SiTypescript, SiUnrealengine } from "react-icons/si";
+import { TbBrandCpp, TbBrandCSharp, TbSql } from "react-icons/tb";
 
 
 import { motion } from "framer-motion";

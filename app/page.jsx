@@ -1,11 +1,10 @@
 "use client";
 
-import { Button } from "../components/ui/button";
 import { CiRead } from "react-icons/ci";
+import { Button } from "../components/ui/button";
 
-import Social from "../components/Socials";
 import Photo from "../components/Photo";
-import Stats from "../components/Stats";
+import Social from "../components/Socials";
 
 const Home = () => {
   return (

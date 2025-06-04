@@ -1,8 +1,8 @@
 "use client";
-import * as React from "react";
+import { cn } from "@/lib/utils";
 import * as SheetPrimitive from "@radix-ui/react-dialog";
 import { cva } from "class-variance-authority";
-import { cn } from "@/lib/utils";
+import * as React from "react";
 
 import { IoMdClose } from "react-icons/io";
 
@@ -109,14 +109,6 @@ const SheetDescription = React.forwardRef(({ className, ...props }, ref) => (
 SheetDescription.displayName = SheetPrimitive.Description.displayName;
 
 export {
-  Sheet,
-  SheetPortal,
-  SheetOverlay,
-  SheetTrigger,
-  SheetClose,
-  SheetContent,
-  SheetHeader,
-  SheetFooter,
-  SheetTitle,
-  SheetDescription,
+  Sheet, SheetClose,
+  SheetContent, SheetDescription, SheetFooter, SheetHeader, SheetOverlay, SheetPortal, SheetTitle, SheetTrigger
 };

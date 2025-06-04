@@ -7,14 +7,14 @@ import { Textarea } from "../../components/ui/textarea";
 import {
   Select,
   SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectLabel,
-  SelectValue,
   SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectTrigger,
+  SelectValue,
 } from "../../components/ui/select";
 
-import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
+import { FaEnvelope, FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
 
 const infos = [
   {

@@ -1,11 +1,10 @@
 "use client";
 
-import { useSwiper } from "swiper/react";
 import {
   PiCaretLeftBold,
-  PiCaretRightBold,
-  PiCarrotThin,
+  PiCaretRightBold
 } from "react-icons/pi";
+import { useSwiper } from "swiper/react";
 
 const WorkSliderButtons = ({ containerStyles, btnStyles, iconsStyles }) => {
   const swiper = useSwiper();
