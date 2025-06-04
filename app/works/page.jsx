@@ -1,7 +1,7 @@
 "use client";
 
-import WorkCard from "@/components/WorkCard"; // Add this import
-import WorkModal from "@/components/WorkModal"; // Add this import
+import WorkCard from "@/components/WorkCard";
+import WorkModal from "@/components/WorkModal";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
@@ -118,7 +118,6 @@ const Works = () => {
         };
     }, [activeProject, fullscreen]);
 
-    // Listen for ESC key to close modal/fullscreen
     useEffect(() => {
         const handleKeyDown = (e) => {
             if (e.key === "Escape" && activeProject) {
