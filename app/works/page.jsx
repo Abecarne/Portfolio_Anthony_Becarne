@@ -1,10 +1,9 @@
 "use client";
 
+import WorkCard from "@/components/WorkCard"; // Add this import
+import WorkModal from "@/components/WorkModal"; // Add this import
 import { AnimatePresence, motion } from "framer-motion";
-import Image from "next/image";
-import Link from "next/link";
-import { useState } from "react";
-import { FiMaximize2, FiMinimize2 } from "react-icons/fi"; // Add this for fullscreen icons
+import { useEffect, useState } from "react";
 
 const projects = [
 	{
@@ -103,11 +102,35 @@ const categories = [
 ];
 
 const Works = () => {
-	const [selectedCategory, setSelectedCategory] = useState("All");
-	const [activeProject, setActiveProject] = useState(null);
-	const [fullscreen, setFullscreen] = useState(false); // Fullscreen state
+    const [selectedCategory, setSelectedCategory] = useState("All");
+    const [activeProject, setActiveProject] = useState(null);
+    const [fullscreen, setFullscreen] = useState(false);
 
-	const filteredProjects =
+    // Disable scroll when modal is open and fullscreen
+    useEffect(() => {
+        if (activeProject && fullscreen) {
+            document.body.style.overflow = "hidden";
+        } else {
+            document.body.style.overflow = "";
+        }
+        return () => {
+            document.body.style.overflow = "";
+        };
+    }, [activeProject, fullscreen]);
+
+    // Listen for ESC key to close modal/fullscreen
+    useEffect(() => {
+        const handleKeyDown = (e) => {
+            if (e.key === "Escape" && activeProject) {
+                setActiveProject(null);
+                setFullscreen(false);
+            }
+        };
+        window.addEventListener("keydown", handleKeyDown);
+        return () => window.removeEventListener("keydown", handleKeyDown);
+    }, [activeProject]);
+
+    const filteredProjects =
 		selectedCategory === "All"
 			? projects
 			: projects.filter((p) => p.category === selectedCategory);
@@ -119,59 +142,37 @@ const Works = () => {
 				opacity: 1,
 				transition: { delay: 0.5, duration: 0.4, ease: "easeIn" },
 			}}
-			className="min-h-[80vh] flex flex-col justify-center py-12 xl:px-0"
+			className="min-h-[80vh] flex flex-col justify-center xl:px-0"
 		>
 			<div className="container mx-auto">
-				<h1 className="text-4xl font-bold mb-8 text-accent">My Projects</h1>
-				{/* Filter Buttons */}
-				<div className="flex gap-4 mb-8 flex-wrap">
-					{categories.map((cat) => (
-						<button
-							key={cat}
-							onClick={() => setSelectedCategory(cat)}
-							className={`px-4 py-2 rounded-full border transition ${
-								selectedCategory === cat
-									? "bg-accent text-primary font-bold"
-									: "bg-[#232329] text-white/70 border-white/10 hover:bg-accent/30"
-							}`}
-						>
-							{cat}
-						</button>
-					))}
+				<div className="flex flex-col md:flex-row md:items-center md:justify-between mb-8">
+					<h1 className="text-4xl font-bold text-accent mb-4 md:mb-0">
+						My Projects
+					</h1>
+					<div className="flex gap-4 flex-wrap">
+						{categories.map((cat) => (
+							<button
+								key={cat}
+								onClick={() => setSelectedCategory(cat)}
+								className={`px-4 py-2 rounded-full border transition ${
+									selectedCategory === cat
+										? "bg-accent text-primary font-bold"
+										: "bg-[#232329] text-white/70 border-white/10 hover:bg-accent/30"
+								}`}
+							>
+								{cat}
+							</button>
+						))}
+					</div>
 				</div>
 				<div className="h-[80vh] overflow-y-auto pr-2">
 					<div className="grid grid-cols-1 md:grid-cols-2 gap-10">
 						{filteredProjects.map((project, idx) => (
-							<motion.div
+							<WorkCard
 								key={idx}
-								whileHover={{ scale: 1.03 }}
-								className="bg-[#232329] rounded-xl p-8 flex flex-col gap-4 shadow-lg cursor-pointer transition"
+								project={project}
 								onClick={() => setActiveProject(project)}
-							>
-								<h2 className="text-2xl font-bold text-white">
-									{project.title}
-								</h2>
-								<h3 className="text-lg text-accent">{project.category}</h3>
-								<div className="flex items-center justify-center min-h-[200px]">
-									{project.video ? (
-										<iframe
-											src={project.video}
-											title={project.title}
-											className="w-full h-56 rounded-lg"
-											allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-											allowFullScreen
-										/>
-									) : (
-										<Image
-											src={project.image}
-											width={400}
-											height={250}
-											className="object-cover rounded-lg"
-											alt={project.title}
-										/>
-									)}
-								</div>
-							</motion.div>
+							/>
 						))}
 					</div>
 				</div>
@@ -179,110 +180,15 @@ const Works = () => {
 			{/* Modal Overlay for Zoomed Card */}
 			<AnimatePresence>
 				{activeProject && (
-					<motion.div
-						className={`fixed inset-0 z-50 flex items-center justify-center bg-black/80`}
-						initial={{ opacity: 0 }}
-						animate={{ opacity: 1 }}
-						exit={{ opacity: 0 }}
-						onClick={() => {
+					<WorkModal
+						project={activeProject}
+						fullscreen={fullscreen}
+						onClose={() => {
 							setActiveProject(null);
 							setFullscreen(false);
 						}}
-					>
-						<motion.div
-							className={`bg-[#232329] rounded-xl shadow-2xl relative transition-all duration-300
-                                ${fullscreen
-									? "w-screen h-screen max-w-none max-h-none p-0 rounded-none"
-									: "max-w-2xl w-full p-8"}
-                            `}
-							initial={{ scale: 0.8 }}
-							animate={{ scale: 1 }}
-							exit={{ scale: 0.8 }}
-							onClick={(e) => e.stopPropagation()}
-						>
-							{/* Close Button */}
-							<button
-								className="absolute top-4 right-4 text-white text-2xl z-10"
-								onClick={() => {
-									setActiveProject(null);
-									setFullscreen(false);
-								}}
-								aria-label="Close"
-							>
-								&times;
-							</button>
-							{/* Fullscreen Toggle Button */}
-							<button
-								className="absolute top-4 right-14 text-white text-2xl z-10"
-								onClick={() => setFullscreen((f) => !f)}
-								aria-label={fullscreen ? "Exit Fullscreen" : "Fullscreen"}
-							>
-								{fullscreen ? <FiMinimize2 /> : <FiMaximize2 />}
-							</button>
-							<div className={fullscreen ? "p-8 md:p-16 h-full flex flex-col" : ""}>
-								<h2 className="text-3xl font-bold text-white mb-2">
-									{activeProject.title}
-								</h2>
-								<h3 className="text-xl text-accent mb-2">
-									{activeProject.category}
-								</h3>
-								<ul className="flex gap-2 flex-wrap mb-4">
-									{activeProject.stack.map((item, i) => (
-										<li key={i} className="text-accent text-base">
-											{item.name}
-											{i < activeProject.stack.length - 1 && ","}
-										</li>
-									))}
-								</ul>
-								<div className="mb-4 flex-1 flex items-center justify-center">
-									{activeProject.video ? (
-										<iframe
-											src={activeProject.video}
-											title={activeProject.title}
-											className={
-												fullscreen
-													? "w-full h-full min-h-[400px] rounded-lg"
-													: "w-full h-96 rounded-lg"
-											}
-											allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-											allowFullScreen
-										/>
-									) : (
-										<Image
-											src={activeProject.image}
-											width={fullscreen ? 1200 : 600}
-											height={fullscreen ? 700 : 350}
-											className="object-cover rounded-lg"
-											alt={activeProject.title}
-										/>
-									)}
-								</div>
-								<p className="text-white/80 mb-4">
-									{activeProject.description}
-								</p>
-								<div className="flex gap-4 mt-2">
-									{activeProject.live && (
-										<Link
-											href={activeProject.live}
-											target="_blank"
-											className="text-accent underline"
-										>
-											Live project
-										</Link>
-									)}
-									{activeProject.url && (
-										<Link
-											href={activeProject.url}
-											target="_blank"
-											className="text-accent underline"
-										>
-											Github repository
-										</Link>
-									)}
-								</div>
-							</div>
-						</motion.div>
-					</motion.div>
+						onToggleFullscreen={() => setFullscreen((f) => !f)}
+					/>
 				)}
 			</AnimatePresence>
 		</motion.div>
