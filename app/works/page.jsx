@@ -59,7 +59,7 @@ const projects = [
 	},
 	{
 		num: "04",
-		category: "FullStack Development",
+		category: "Web Development",
 		title: "AREA",
 		description:
 			"A fullstack web and mobile application that uses different APIs such as Youtube, Gmail, Twitch, Twitter and GitHub. Users can create an account, connect their services, and create applets.",
@@ -77,13 +77,13 @@ const projects = [
 	},
 	{
 		num: "05",
-		category: "FullStack Development",
+		category: "Web Development",
 		title: "Vocabulary",
 		description:
 			"A fullstack web application that helps users to learn new words and their meanings. Users can create an account, add new words, and test their knowledge with quizzes.",
 		stack: [
-			{ name: "Next.js" },
 			{ name: "React.js" },
+			{ name: "Next.js" },
 			{ name: "TypeScript" },
 			{ name: "TailwindCSS" },
 			{ name: "MongoDB" },
@@ -94,6 +94,22 @@ const projects = [
 		live: "",
 		url: "",
 	},
+	{
+		num: "06",
+		category: "Web Development",
+		title: "Portfolio Anthony Becarne",
+		description:
+			"A personal portfolio website showcasing my projects and skills.",
+		stack: [
+			{ name: "React.js" },
+			{ name: "Next.js" },
+			{ name: "TypeScript" },
+			{ name: "TailwindCSS" },
+		],
+		image: "/assets/works/portfolio.png",
+		live: "",
+		url: "",
+	},
 ];
 
 const categories = [
@@ -101,8 +117,13 @@ const categories = [
 	...Array.from(new Set(projects.map((p) => p.category))),
 ];
 
+const allStacks = Array.from(
+  new Set(projects.flatMap((p) => p.stack.map((s) => s.name)))
+);
+
 const Works = () => {
     const [selectedCategory, setSelectedCategory] = useState("All");
+    const [selectedStacks, setSelectedStacks] = useState([]);
     const [activeProject, setActiveProject] = useState(null);
     const [fullscreen, setFullscreen] = useState(false);
 
@@ -129,10 +150,13 @@ const Works = () => {
         return () => window.removeEventListener("keydown", handleKeyDown);
     }, [activeProject]);
 
-    const filteredProjects =
-		selectedCategory === "All"
-			? projects
-			: projects.filter((p) => p.category === selectedCategory);
+    const filteredProjects = projects.filter((p) => {
+      const categoryOk = selectedCategory === "All" || p.category === selectedCategory;
+      const stacksOk =
+        selectedStacks.length === 0 ||
+        selectedStacks.every((stack) => p.stack.map((s) => s.name).includes(stack));
+      return categoryOk && stacksOk;
+    });
 
 	return (
 		<motion.div
