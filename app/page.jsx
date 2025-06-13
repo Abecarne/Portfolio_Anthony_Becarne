@@ -12,16 +12,16 @@ const Home = () => {
       {/* Availability indicator fixed at top right, under navbar */}
       <div className="container mx-auto h-full">
         <div className="flex flex-col xl:flex-row items-center justify-between xl:pt-8 xl:pb-24">
-          <div className="text-center xl:text-left order-2 xl:order-none">
+          <div className="text-center xl:text-left order-2 xl:order-none px-9">
             
-            <span>Creative Developer</span>
-            <h2 className="h1">
+            <span className="opacity-80">Creative Developer</span>
+            <h2 className="h2">
               Hello, I'm
               <br />
-              <span className="text-accent">Anthony Becarne</span>
+              <span className="text-accent h2 xl:h1">Anthony Becarne</span>
             </h2>
             
-            <p className="max-w-[500px] mb-9 text-white/80">
+            <p className="xl:max-w-[500px] xl:mb-9 text-white/80">
               Passionate about creativity and technology, I specialize in crafting
               immersive digital experiences. With a focus on software engineering
               and video game development, I bring ideas to life through innovative
@@ -30,10 +30,10 @@ const Home = () => {
 
             <span className="flex items-center gap-2 text-m font-medium xl:text-xl mb-5">
               <span className="relative flex h-5 w-5 m-4">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-5 w-5s bg-green-500"></span>
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-5 w-5 bg-accent"></span>
               </span>
-              <span className="text-green-400 whitespace-nowrap">
+              <span className="text-accent whitespace">
                 Available for freelance or contract
               </span>
             </span>

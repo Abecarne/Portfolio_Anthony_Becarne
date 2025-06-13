@@ -169,7 +169,7 @@ const Works = () => {
 		>
 			<div className="container mx-auto">
 				<div className="flex flex-col md:flex-row md:items-center md:justify-between mb-8">
-					<h1 className="text-4xl font-bold text-accent mb-4 md:mb-0">
+					<h1 className="text-xl xl:text-4xl font-bold text-accent mb-4 md:mb-0">
 						My Projects
 					</h1>
 					<div className="flex gap-4 flex-wrap">

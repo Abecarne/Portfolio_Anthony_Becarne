@@ -75,7 +75,7 @@ const WorkCard = ({ project, onClick }) => {
         <TooltipProvider delayDuration={100}>
             <Tooltip>
                 <TooltipTrigger className="absolute top-4 right-4 text-5xl text-accent">
-                <div className="text-5xl group-hover:text-accent transition-all duration-300">
+                <div className=" text-5xl group-hover:text-accent transition-all duration-300">
                     {MainStackIcon}
                 </div>
                 </TooltipTrigger>
@@ -85,8 +85,8 @@ const WorkCard = ({ project, onClick }) => {
             </Tooltip>
         </TooltipProvider>
       
-      <h2 className="text-2xl font-bold text-white">{project.title}</h2>
-      <h3 className="text-lg text-accent">{project.category}</h3>
+      <h2 className="text-lg xl:text-2xl font-bold text-white">{project.title}</h2>
+      <h3 className="xl:text-lg text-accent">{project.category}</h3>
       <div className="flex items-center justify-center min-h-[200px]">
         {project.video ? (
           <iframe
