@@ -25,6 +25,22 @@ const projects = [
 	},
 	{
 		num: "02",
+		category: "Web Development",
+		title: "Portfolio Anthony Becarne",
+		description:
+			"A personal portfolio website showcasing my projects and skills.",
+		stack: [
+			{ name: "React.js" },
+			{ name: "Next.js" },
+			{ name: "TypeScript" },
+			{ name: "TailwindCSS" },
+		],
+		image: "/assets/works/portfolio.png",
+		live: "",
+		url: "",
+	},
+	{
+		num: "03",
 		category: "Game Development",
 		title: "Sense | Chapter 1",
 		description:
@@ -40,7 +56,7 @@ const projects = [
 		url: "",
 	},
 	{
-		num: "03",
+		num: "04",
 		category: "Game Development",
 		title: "R-Type",
 		description:
@@ -58,7 +74,7 @@ const projects = [
 		url: "",
 	},
 	{
-		num: "04",
+		num: "05",
 		category: "Web Development",
 		title: "AREA",
 		description:
@@ -76,7 +92,7 @@ const projects = [
 		url: "",
 	},
 	{
-		num: "05",
+		num: "06",
 		category: "Web Development",
 		title: "Vocabulary",
 		description:
@@ -91,22 +107,6 @@ const projects = [
 			{ name: "NodeJS" },
 		],
 		image: "/assets/works/project01.png",
-		live: "",
-		url: "",
-	},
-	{
-		num: "06",
-		category: "Web Development",
-		title: "Portfolio Anthony Becarne",
-		description:
-			"A personal portfolio website showcasing my projects and skills.",
-		stack: [
-			{ name: "React.js" },
-			{ name: "Next.js" },
-			{ name: "TypeScript" },
-			{ name: "TailwindCSS" },
-		],
-		image: "/assets/works/portfolio.png",
 		live: "",
 		url: "",
 	},
@@ -125,7 +125,7 @@ const Works = () => {
     const [selectedCategory, setSelectedCategory] = useState("All");
     const [selectedStacks, setSelectedStacks] = useState([]);
     const [activeProject, setActiveProject] = useState(null);
-    const [fullscreen, setFullscreen] = useState(false);
+    const [fullscreen, setFullscreen] = useState(true);
 
     // Disable scroll when modal is open and fullscreen
     useEffect(() => {

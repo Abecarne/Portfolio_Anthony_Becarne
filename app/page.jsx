@@ -27,15 +27,17 @@ const Home = () => {
               and video game development, I bring ideas to life through innovative
               solutions and engaging interfaces.
             </p>
+
             <span className="flex items-center gap-2 text-m font-medium xl:text-xl mb-5">
               <span className="relative flex h-5 w-5 m-4">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-5 w-5 bg-green-500"></span>
+                <span className="relative inline-flex rounded-full h-5 w-5s bg-green-500"></span>
               </span>
               <span className="text-green-400 whitespace-nowrap">
                 Available for freelance or contract
               </span>
             </span>
+
             <div className="flex flex-col xl:flex-row items-center gap-8 ">
               <Button
                 variant="outline"
@@ -45,7 +47,6 @@ const Home = () => {
                   window.open("/assets/resume/Anthony Becarne Resume.pdf")
                 }
               >
-                
                 <span>View CV</span>
                 <CiRead className="text-xl" />
               </Button>
@@ -56,9 +57,9 @@ const Home = () => {
                   iconStyles="w-9 h-9 border border-accent rounded-full flex justify-center items-center text-accent text-base hover:bg-accent hover:text-primary hover:transition-all duration-500"
                 />
               </div>
-            </div>
-            
+            </div>            
           </div>
+          
           <div className="order-1 xl:order-none mb-8 xl:mb-0">
             <Photo />
           </div>
