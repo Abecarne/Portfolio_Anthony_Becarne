@@ -34,6 +34,7 @@ const projects = [
 			{ name: "Next.js" },
 			{ name: "TypeScript" },
 			{ name: "TailwindCSS" },
+			{ name: "Git" },
 		],
 		image: "/assets/works/portfolio.png",
 		live: "",
@@ -41,6 +42,22 @@ const projects = [
 	},
 	{
 		num: "03",
+		category: "AI Development",
+		title: "Gomoku AI",
+		description:
+			"Gomoku AI is a project that implements an AI player for the classic game Gomoku (Five in a Row). The AI uses minmax to predict and counter the player's moves.",
+		stack: [
+			{ name: "C++" },
+			{ name: "Bash" },
+			{ name: "Git" },
+		],
+		image: "/assets/works/gomokuAI.jpg",
+		video: "",
+		live: "",
+		url: "https://github.com/Abecarne/GomokuAI",
+	},
+	{
+		num: "04",
 		category: "Game Development",
 		title: "Sense | Chapter 1",
 		description:
@@ -56,7 +73,7 @@ const projects = [
 		url: "",
 	},
 	{
-		num: "04",
+		num: "05",
 		category: "Game Development",
 		title: "R-Type",
 		description:
@@ -74,7 +91,7 @@ const projects = [
 		url: "",
 	},
 	{
-		num: "05",
+		num: "06",
 		category: "Web Development",
 		title: "AREA",
 		description:
@@ -92,7 +109,7 @@ const projects = [
 		url: "",
 	},
 	{
-		num: "06",
+		num: "07",
 		category: "Web Development",
 		title: "Vocabulary",
 		description:
@@ -110,6 +127,21 @@ const projects = [
 		live: "",
 		url: "",
 	},
+	{
+		num: "08",
+		category: "AI Development",
+		title: "Trading Bot",
+		description:
+			"A trading bot that uses decisional AI to predict stock prices and make trades.",
+		stack: [
+			{ name: "Python" },
+			{ name: "Pandas" },
+			{ name: "NumPy" },
+		],
+		image: "/assets/works/trade.jpg",
+		live: "",
+		url: "https://github.com/Abecarne/TradeBot",
+	},
 ];
 
 const categories = [
@@ -125,7 +157,7 @@ const Works = () => {
     const [selectedCategory, setSelectedCategory] = useState("All");
     const [selectedStacks, setSelectedStacks] = useState([]);
     const [activeProject, setActiveProject] = useState(null);
-    const [fullscreen, setFullscreen] = useState(true);
+    const [fullscreen, setFullscreen] = useState(false);
 
     // Disable scroll when modal is open and fullscreen
     useEffect(() => {
