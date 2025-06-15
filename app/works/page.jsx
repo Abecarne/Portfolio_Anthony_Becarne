@@ -38,7 +38,7 @@ const projects = [
 		],
 		image: "/assets/works/portfolio.png",
 		live: "",
-		url: "",
+		url: "https://github.com/Abecarne/Portfolio_Anthony_Becarne",
 	},
 	{
 		num: "03",
@@ -88,7 +88,7 @@ const projects = [
 		image: "/assets/works/rtype_preview.png",
 		video: "https://www.youtube.com/embed/bC9gDVmy5RU",
 		live: "",
-		url: "",
+		url: "https://github.com/Abecarne/R-Type",
 	},
 	{
 		num: "06",
@@ -141,6 +141,23 @@ const projects = [
 		image: "/assets/works/trade.jpg",
 		live: "",
 		url: "https://github.com/Abecarne/TradeBot",
+	},
+	{
+		num: "09",
+		category: "Game Development",
+		title: "Indie Studio",
+		description:
+			"Creation of a multiplayer 3D bomberman game using a custom game engine. The game features different scenes, enemies with their own AI behavior. Up to 4 players can play together in a local network. The game is inspired by the classic Bomberman game.",
+		stack: [
+			{ name: "C++" },
+			{ name: "Raylib" },
+			{ name: "Boost" },
+			{ name: "Cmake" },
+			{ name: "Git" },
+		],
+		image: "/assets/works/indie_gif.gif",
+		live: "",
+		url: "https://github.com/Abecarne/IndieStudio",
 	},
 ];
 
